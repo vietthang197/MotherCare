@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_main"
+    tools:context=".activity.WelcomeActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/trangtri"/>
+
+    <ImageView
+        android:id="@+id/imgCamNangBaBau"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:padding="20dp"
+        android:layout_marginTop="50dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/camnangbabau"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/giadinh"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:layout_below="@id/imgCamNangBaBau">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:fontFamily="@font/utm_androgyne"
+                android:text="@string/ky_sinh_cuoi"
+                android:layout_weight="1"/>
+
+            <EditText
+                android:id="@+id/edtKySinhCuoi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:gravity="top"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:background="@drawable/custom_edittext_select"
+                android:editable="false"
+                android:textAlignment="center"
+                android:fontFamily="@font/utm_androgyne"
+                android:hint="@string/select"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:fontFamily="@font/utm_androgyne"
+                android:text="@string/ngay_du_sinh"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/tvNgayDuSinh"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:gravity="top"
+                android:layout_gravity="center"
+                android:background="@drawable/custom_edittext_select_white"
+                android:textAlignment="center"
+                android:fontFamily="@font/utm_androgyne"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvTuanTuoi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:fontFamily="@font/utm_androgyne"/>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:background="@drawable/custom_btn_tiep"/>
+    </LinearLayout>
+</RelativeLayout>
