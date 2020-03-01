@@ -29,8 +29,6 @@ public class ShopActivity extends AppCompatActivity implements RecyclerViewOnCli
 
     private ShopAdapter shopAdapter;
 
-    private static WebView wv;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,8 +70,7 @@ public class ShopActivity extends AppCompatActivity implements RecyclerViewOnCli
 
         AlertDialog.Builder alert = new AlertDialog.Builder(ShopActivity.this);
 
-        if (wv == null)
-            wv = new WebView(ShopActivity.this);
+        WebView wv = new WebView(getApplicationContext());
         wv.loadUrl(shop.getUrlWeb());
         wv.getSettings().setJavaScriptEnabled(true);
         wv.setWebChromeClient(new WebChromeClient());
@@ -82,6 +79,7 @@ public class ShopActivity extends AppCompatActivity implements RecyclerViewOnCli
             @Override
             public void onClick(DialogInterface dialog, int id) {
                 dialog.dismiss();
+                dialog.cancel();
             }
         });
         alert.show();

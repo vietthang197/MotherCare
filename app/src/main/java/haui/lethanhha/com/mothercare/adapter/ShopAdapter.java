@@ -56,7 +56,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder>  {
 
         public ViewHolder(@NonNull View itemView, RecyclerViewOnClickListener listener) {
             super(itemView);
-            itemView.setOnClickListener(this);
+            itemView.setOnClickListener(ViewHolder.this);
             recyclerViewOnClickListener = listener;
         }
 
