@@ -5,6 +5,8 @@ public class Shop {
 
     private int anhShop;
 
+    private String urlImage;
+
     private String title;
 
     private String money;
@@ -14,9 +16,10 @@ public class Shop {
     public Shop() {
     }
 
-    public Shop(int id, int anhShop, String title, String money, String urlWeb) {
+    public Shop(int id, int anhShop, String urlImage, String title, String money, String urlWeb) {
         this.id = id;
         this.anhShop = anhShop;
+        this.urlImage = urlImage;
         this.title = title;
         this.money = money;
         this.urlWeb = urlWeb;
@@ -60,5 +63,13 @@ public class Shop {
 
     public void setUrlWeb(String urlWeb) {
         this.urlWeb = urlWeb;
+    }
+
+    public String getUrlImage() {
+        return urlImage;
+    }
+
+    public void setUrlImage(String urlImage) {
+        this.urlImage = urlImage;
     }
 }

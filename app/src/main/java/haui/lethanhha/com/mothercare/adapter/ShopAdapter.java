@@ -61,7 +61,10 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder>  {
         }
 
         public void bindView(Shop shop) {
-            Picasso.with(context).load(shop.getAnhShop()).into(imgShop);
+            if (shop.getUrlImage() == null)
+                Picasso.with(context).load(shop.getAnhShop()).into(imgShop);
+            else
+                Picasso.with(context).load(shop.getUrlImage()).into(imgShop);
             tvTitle.setText(shop.getTitle());
             tvPrice.setText(shop.getMoney());
         }

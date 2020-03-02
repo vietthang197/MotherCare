@@ -51,7 +51,7 @@ public class ShopActivity extends AppCompatActivity implements RecyclerViewOnCli
 
     private void initData() {
         shopList = new ArrayList<>();
-        shopList.add(new Shop(1, R.drawable.amnhacdefault, "Shop bán cua", "100.000 đ", "https://www.lazada.vn/products/hat-giong-cai-thia-cao-san-phunongseeds-i202653058-s252914371.html"));
+        shopList.add(new Shop(1, R.drawable.amnhacdefault, "https://asianparent-assets-vn.dexecure.net/wp-content/uploads/sites/2/2018/06/chuan-bi-do-so-sinh-day-du-tat-tan-tat-de-don-be-ra-doi-2.jpg", "Shop bán cua", "100.000 đ", "https://www.lazada.vn/products/hat-giong-cai-thia-cao-san-phunongseeds-i202653058-s252914371.html"));
         shopAdapter = new ShopAdapter(shopList, this, this);
     }
 
