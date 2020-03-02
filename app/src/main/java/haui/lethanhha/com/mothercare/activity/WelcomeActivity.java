@@ -1,15 +1,13 @@
-package thangducanh.tagroup.com.mothercare.activity;
+package haui.lethanhha.com.mothercare.activity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -19,16 +17,16 @@ import org.joda.time.Weeks;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
 
-import thangducanh.tagroup.com.mothercare.R;
+import haui.lethanhha.com.mothercare.R;
 
 public class WelcomeActivity extends AppCompatActivity {
 
     private EditText edtKySinhCuoi;
 
     private TextView tvNgayDuSinh, tvTuanTuoi;
+
+    private Button btnNext;
 
     private DatePickerDialog.OnDateSetListener date;
 
@@ -80,12 +78,24 @@ public class WelcomeActivity extends AppCompatActivity {
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
+
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(WelcomeActivity.this, MenuMainActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.trans_left_in,
+                        R.anim.trans_left_out);
+                finish();
+            }
+        });
     }
 
     private void initView() {
         edtKySinhCuoi = findViewById(R.id.edtKySinhCuoi);
         tvNgayDuSinh = findViewById(R.id.tvNgayDuSinh);
         tvTuanTuoi = findViewById(R.id.tvTuanTuoi);
+        btnNext = findViewById(R.id.btnNext);
     }
 
 }
