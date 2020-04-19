@@ -3,4 +3,12 @@
     <string name="ky_sinh_cuoi">Kỳ sinh cuối</string>
     <string name="select">Chọn</string>
     <string name="ngay_du_sinh">Ngày dự sinh</string>
+
+
+    <string-array name="arrTiemPhongMe">
+        <item>Uốn ván</item>
+        <item>+Mũi đầu, từ tuần 22 trở đi, mũi 2 tiêm nhắc lại cách 1 tháng. Để phòng sinh non, bạn nên tiêm 1 mũi muộn nhất là tuần 26, mũi 2 vào tuần 30. Mẹ nên tiêm phòng uốn ván vì chứng này có thể gây nên tình trạng thai chết lưu</item>
+        <item>Cúm</item>
+        <item>+Đây là căn bệnh thường gặp nhất ở Việt Nam. Cảm cúm thông thường sẽ không gây ra những biến chứng gì đặc biệt. Song khi mang thai, những cơm cảm cúm kéo dài có thể gây dị tật bẩm sinh cho thai nhi, nhất là mẹ mắc bệnh trong 3 tháng đầu thai kì. Nếu lỡ mang thai mà chưa kịp tiêm phòng cúm, bạn vẫn có thể tiêm ngừa trong thai kỳ của mình. Vacxin phòng ngừa cúm được chế tạo từ những virus đã chết nên rất an toàn với bà bầu.</item>
+    </string-array>
 </resources>

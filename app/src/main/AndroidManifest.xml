@@ -11,7 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.AnUongActivity" android:theme="@style/ThemeNoActionBar"></activity>
+        <activity
+            android:name=".activity.TiemPhongActivity"
+            android:theme="@style/ThemeNoActionBar">
+        </activity>
+        <activity
+            android:name=".activity.AnUongActivity"
+            android:theme="@style/ThemeNoActionBar" />
         <activity
             android:name=".activity.ShopActivity"
             android:theme="@style/ThemeNoActionBar" />

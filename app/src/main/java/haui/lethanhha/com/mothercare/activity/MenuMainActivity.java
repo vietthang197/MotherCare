@@ -82,7 +82,18 @@ public class MenuMainActivity extends AppCompatActivity  implements RecyclerView
             case 1:
                 doGoAnUongActivity();
                 break;
+            case 2:
+                doGoTiemPhongActivity();
+                break;
         }
+    }
+
+    private void doGoTiemPhongActivity() {
+        Intent intent = new Intent(MenuMainActivity.this, TiemPhongActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.trans_left_in,
+                R.anim.trans_left_out);
+        finish();
     }
 
     private void doGoAnUongActivity() {
