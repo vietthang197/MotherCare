@@ -22,6 +22,7 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("thangducanh.tagroup.com.mothercare", appContext.getPackageName());
+        //assertEquals("thangducanh.tagroup.com.mothercare", appContext.getPackageName());
+        assertEquals("haui.lethanhha.com.mothercare", appContext.getPackageName());
     }
 }

@@ -12,9 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".activity.LapLichActivity"
+            android:theme="@style/ThemeNoActionBar"/>
+        <activity
+            android:name=".activity.DatTenActivity"
+            android:theme="@style/ThemeNoActionBar" />
+        <activity
+            android:name=".activity.MuaLamActivity"
+            android:theme="@style/ThemeNoActionBar" />
+        <activity
+            android:name=".activity.KhamThaiActivity"
+            android:theme="@style/ThemeNoActionBar" />
+        <activity
             android:name=".activity.TiemPhongActivity"
-            android:theme="@style/ThemeNoActionBar">
-        </activity>
+            android:theme="@style/ThemeNoActionBar" />
         <activity
             android:name=".activity.AnUongActivity"
             android:theme="@style/ThemeNoActionBar" />

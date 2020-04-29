@@ -9,25 +9,24 @@ import com.google.android.material.tabs.TabLayout;
 
 import haui.lethanhha.com.mothercare.R;
 import haui.lethanhha.com.mothercare.adapter.TabAdapter;
-import haui.lethanhha.com.mothercare.fragment.ThucPhamFragment;
+import haui.lethanhha.com.mothercare.fragment.DatTenFragment;
 
-public class AnUongActivity extends AppCompatActivity {
+public class DatTenActivity extends AppCompatActivity {
 
     private TabAdapter adapter;
     private TabLayout tabLayout;
     private ViewPager viewPager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_an_uong);
+        setContentView(R.layout.activity_dat_ten);
 
-        viewPager = (ViewPager) findViewById(R.id.viewPagerAnUong);
-        tabLayout = (TabLayout) findViewById(R.id.tabLayoutAnUong);
+        viewPager = (ViewPager) findViewById(R.id.viewPagerDatTen);
+        tabLayout = (TabLayout) findViewById(R.id.tabLayoutDatTen);
         adapter = new TabAdapter(getSupportFragmentManager());
-        adapter.addFragment(new ThucPhamFragment(), "Thực phẩm");
-        adapter.addFragment(new ThucPhamFragment(), "Món ăn");
-        adapter.addFragment(new ThucPhamFragment(), "Nhóm chất");
+        adapter.addFragment(new DatTenFragment(),"Tổng quan");
+        adapter.addFragment(new DatTenFragment(),"Bé trai");
+        adapter.addFragment(new DatTenFragment(),"Bé gái");
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
     }

@@ -9,9 +9,9 @@ import com.google.android.material.tabs.TabLayout;
 
 import haui.lethanhha.com.mothercare.R;
 import haui.lethanhha.com.mothercare.adapter.TabAdapter;
-import haui.lethanhha.com.mothercare.fragment.ThucPhamFragment;
+import haui.lethanhha.com.mothercare.fragment.LapLichFragment;
 
-public class AnUongActivity extends AppCompatActivity {
+public class LapLichActivity extends AppCompatActivity {
 
     private TabAdapter adapter;
     private TabLayout tabLayout;
@@ -20,14 +20,13 @@ public class AnUongActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_an_uong);
-
-        viewPager = (ViewPager) findViewById(R.id.viewPagerAnUong);
-        tabLayout = (TabLayout) findViewById(R.id.tabLayoutAnUong);
+        setContentView(R.layout.activity_lap_lich);
+        viewPager = (ViewPager) findViewById(R.id.viewPagerLapLich);
+        tabLayout = (TabLayout) findViewById(R.id.tabLayoutLapLich);
         adapter = new TabAdapter(getSupportFragmentManager());
-        adapter.addFragment(new ThucPhamFragment(), "Thực phẩm");
-        adapter.addFragment(new ThucPhamFragment(), "Món ăn");
-        adapter.addFragment(new ThucPhamFragment(), "Nhóm chất");
+        adapter.addFragment(new LapLichFragment(),"Tiêm chủng");
+        adapter.addFragment(new LapLichFragment(),"Khám thai");
+        adapter.addFragment(new LapLichFragment(),"Khác");
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
     }
