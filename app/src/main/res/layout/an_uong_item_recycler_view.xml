@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="80dp"
+        android:layout_height="80dp">
+
+        <ImageView
+            android:id="@+id/imgAnUongItem"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"/>
+        <ImageView
+            android:id="@+id/imgAllow"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvAnUongItem"
+        android:layout_gravity="center_vertical"
+        android:layout_width="0dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/btnChiTietAnUong"
+        android:background="@drawable/custom_btn_next_default"
+        android:layout_gravity="center_vertical"
+        android:layout_width="20dp"
+        android:layout_height="20dp"/>
+</LinearLayout>
