@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="60dp"
+        android:layout_height="60dp">
+
+        <ImageView
+            android:id="@+id/imgAnUongItem"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerCrop"/>
+        <ImageView
+            android:id="@+id/imgAllow"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvAnUongItem"
+        android:paddingLeft="5dp"
+        android:layout_gravity="center_vertical"
+        android:layout_width="0dp"
+        android:textAlignment="textStart"
+        android:fontFamily="@font/arialroundedbold"
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:ignore="RtlCompat" />
+
+    <Button
+        android:id="@+id/btnChiTietAnUong"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/custom_btn_next_default"
+        android:layout_gravity="center_vertical"
+        android:layout_width="18dp"
+        android:layout_height="18dp"/>
+</LinearLayout>

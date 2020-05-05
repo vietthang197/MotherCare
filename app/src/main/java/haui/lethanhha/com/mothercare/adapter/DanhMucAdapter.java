@@ -53,13 +53,13 @@ public class DanhMucAdapter extends RecyclerView.Adapter<DanhMucAdapter.ViewHold
 
         RecyclerViewOnClickListener recyclerViewOnClickListener;
 
-        public ViewHolder(@NonNull View itemView, RecyclerViewOnClickListener listener) {
+        ViewHolder(@NonNull View itemView, RecyclerViewOnClickListener listener) {
             super(itemView);
             itemView.setOnClickListener(this);
             recyclerViewOnClickListener = listener;
         }
 
-        public void bindView(DanhMuc danhMuc) {
+        void bindView(DanhMuc danhMuc) {
             Picasso.with(context).load(danhMuc.getAnhDanhMuc()).into(imgAnhDanhMuc);
             tvTenDanhMuc.setText(danhMuc.getTenDanhMuc());
         }

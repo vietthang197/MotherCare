@@ -22,11 +22,5 @@ public class KhamThaiActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kham_thai);
 
-        viewPager = (ViewPager) findViewById(R.id.viewPagerKhamThai);
-        tabLayout = (TabLayout) findViewById(R.id.tabLayoutKhamThai);
-        adapter = new TabAdapter(getSupportFragmentManager());
-        adapter.addFragment(new KhamThaiFragment(),"Lịch khám thai định kì");
-        viewPager.setAdapter(adapter);
-        tabLayout.setupWithViewPager(viewPager);
     }
 }

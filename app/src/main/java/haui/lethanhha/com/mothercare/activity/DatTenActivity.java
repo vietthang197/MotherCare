@@ -20,14 +20,5 @@ public class DatTenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dat_ten);
-
-        viewPager = (ViewPager) findViewById(R.id.viewPagerDatTen);
-        tabLayout = (TabLayout) findViewById(R.id.tabLayoutDatTen);
-        adapter = new TabAdapter(getSupportFragmentManager());
-        adapter.addFragment(new DatTenFragment(),"Tổng quan");
-        adapter.addFragment(new DatTenFragment(),"Bé trai");
-        adapter.addFragment(new DatTenFragment(),"Bé gái");
-        viewPager.setAdapter(adapter);
-        tabLayout.setupWithViewPager(viewPager);
     }
 }
