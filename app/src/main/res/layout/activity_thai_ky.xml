@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="haui.lethanhha.com.mothercare.activity.DatTenActivity"
+    tools:context="haui.lethanhha.com.mothercare.activity.ThaiKyActivity"
     android:id="@+id/drawerLayout">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,10 +24,9 @@
                 android:textColor="@android:color/white"
                 android:fontFamily="@font/vf_banditb"
                 android:textSize="26sp"
-                android:text="Đặt tên cho bé"
                 android:textAlignment="center"
-                android:gravity="center_vertical"
-                tools:ignore="RtlCompat" />
+                android:text="Thai Kỳ"
+                android:gravity="center_vertical"></TextView>
         </androidx.appcompat.widget.Toolbar>
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,26 +35,21 @@
             android:orientation="vertical"
             android:background="@drawable/background_danhmuc">
 
-            <ImageView
-                android:id="@+id/imgBgDatTen"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:scaleType="centerCrop"/>
-
             <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tabLayoutDatTen"
+                android:id="@+id/tabLayoutThaiKy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <androidx.viewpager.widget.ViewPager
-                android:id="@+id/viewPagerDatTen"
+                android:id="@+id/viewPagerThaiKy"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"/>
 
 
+
+
         </LinearLayout>
     </LinearLayout>
-
 
 </androidx.drawerlayout.widget.DrawerLayout>

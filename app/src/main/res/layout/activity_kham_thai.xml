@@ -23,10 +23,10 @@
                 android:textColor="@android:color/white"
                 android:fontFamily="@font/vf_banditb"
                 android:textSize="26sp"
-                android:text="Lịch khám thai"
+                android:text="Khám thai"
                 android:textAlignment="center"
                 android:gravity="center_vertical"
-                tools:ignore="RtlCompat"/>
+                tools:ignore="RtlCompat" />
         </androidx.appcompat.widget.Toolbar>
         <LinearLayout
             android:layout_width="match_parent"
@@ -36,20 +36,25 @@
             android:background="@drawable/background_danhmuc">
 
             <ImageView
+                android:id="@+id/imgBgKhamThai"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:scaleType="centerCrop"/>
+
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabLayoutKhamThai"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewPagerKhamThai"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"/>
+
 
         </LinearLayout>
     </LinearLayout>
+
 
 </androidx.drawerlayout.widget.DrawerLayout>

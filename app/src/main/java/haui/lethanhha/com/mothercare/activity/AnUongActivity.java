@@ -31,7 +31,7 @@ public class AnUongActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_an_uong);
 
-        imgBgAnUong = findViewById(R.id.ingBgAnUong);
+        imgBgAnUong = findViewById(R.id.imgBgAnUong);
         Picasso.with(this).load(R.drawable.image_anuong).into(imgBgAnUong);
 
         viewPager = findViewById(R.id.viewPagerAnUong);

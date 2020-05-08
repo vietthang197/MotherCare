@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context="haui.lethanhha.com.mothercare.activity.MuaLamActivity"
     android:id="@+id/drawerLayout">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -27,7 +26,7 @@
                 android:text="Cần mua và cần làm"
                 android:textAlignment="center"
                 android:gravity="center_vertical"
-                tools:ignore="RtlCompat"/>
+                tools:ignore="RtlCompat" />
         </androidx.appcompat.widget.Toolbar>
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,20 +36,22 @@
             android:background="@drawable/background_danhmuc">
 
             <ImageView
+                android:id="@+id/imgBgMuaLam"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:scaleType="centerCrop"/>
+
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabLayoutMuaLam"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewPagerMuaLam"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"/>
 
         </LinearLayout>
     </LinearLayout>
-
 </androidx.drawerlayout.widget.DrawerLayout>

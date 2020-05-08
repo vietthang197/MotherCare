@@ -94,9 +94,32 @@ public class MenuMainActivity extends AppCompatActivity  implements RecyclerView
             case 5:
                 doGoDatTenActivity();
                 break;
+            case 6:
+                dogoDocTruyenActivity();
+                break;
             case 8:
                 doGoLapLichActivity();
+                break;
+            case 10:
+                doGoThaiKyActivity();
+                break;
         }
+    }
+
+    private void dogoDocTruyenActivity() {
+        Intent intent = new Intent(MenuMainActivity.this, DocTruyenActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.trans_left_in,
+                R.anim.trans_left_out);
+        finish();
+    }
+
+    private void doGoThaiKyActivity() {
+        Intent intent = new Intent(MenuMainActivity.this, ThaiKyActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.trans_left_in,
+                R.anim.trans_left_out);
+        finish();
     }
 
     private void doGoLapLichActivity() {

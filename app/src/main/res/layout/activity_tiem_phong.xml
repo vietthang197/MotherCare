@@ -36,6 +36,7 @@
             android:background="@drawable/background_danhmuc">
 
             <ImageView
+                android:id="@+id/imgBgTiemPhong"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:scaleType="centerCrop"/>

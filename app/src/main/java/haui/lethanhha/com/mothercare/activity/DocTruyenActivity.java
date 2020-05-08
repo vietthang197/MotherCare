@@ -15,41 +15,36 @@ import java.util.List;
 
 import haui.lethanhha.com.mothercare.R;
 import haui.lethanhha.com.mothercare.adapter.TabAdapter;
-import haui.lethanhha.com.mothercare.fragment.MuaLamFragment;
-import haui.lethanhha.com.mothercare.fragment.ThucPhamFragment;
-import haui.lethanhha.com.mothercare.fragment.TiemPhongFragment;
-import haui.lethanhha.com.mothercare.model.MuaLam;
-import haui.lethanhha.com.mothercare.model.TiemPhong;
+import haui.lethanhha.com.mothercare.fragment.DocTruyenFragment;
+import haui.lethanhha.com.mothercare.model.DocTruyen;
 
-
-public class MuaLamActivity extends AppCompatActivity {
+public class DocTruyenActivity extends AppCompatActivity {
 
     private TabAdapter adapter;
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
-    private ImageView imgBgMuaLam;
+    private ImageView imgBgDocTruyen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mua_lam);
+        setContentView(R.layout.activity_doc_truyen);
 
-        imgBgMuaLam = findViewById(R.id.imgBgMuaLam);
-        Picasso.with(this).load(R.drawable.image_anuong).into(imgBgMuaLam); // chưa set lại ảnh bg
+        imgBgDocTruyen = findViewById(R.id.imgBgDocTruyen);
+        Picasso.with(this).load(R.drawable.image_anuong).into(imgBgDocTruyen); /// chưa xet lai anh
 
-        viewPager = findViewById(R.id.viewPagerMuaLam);
-        tabLayout =  findViewById(R.id.tabLayoutMuaLam);
+        viewPager = findViewById(R.id.viewPagerDocTruyen);
+        tabLayout =  findViewById(R.id.tabLayoutDocTruyen);
         adapter = new TabAdapter(getSupportFragmentManager(), this);
 
-        List<MuaLam> muaLamList = new ArrayList<>();
-        muaLamList.add(new MuaLam("Chuẩn bị những gì trước khi sinh ?", "Nội dung 1"));
+        List<DocTruyen> docTruyenList = new ArrayList<>();
+        docTruyenList.add(new DocTruyen(R.drawable.atiso, R.drawable.nen, "Truyện 1", "Truyen co tich"));
+        docTruyenList.add(new DocTruyen(R.drawable.atiso, R.drawable.nen, "Truyện 2", "Truyen co tich"));
+        docTruyenList.add(new DocTruyen(R.drawable.atiso, R.drawable.nen, "Truyện 3", "Truyen co tich"));
+        docTruyenList.add(new DocTruyen(R.drawable.atiso, R.drawable.nen, "Truyện 4", "Truyen co tich"));
 
-        List<MuaLam> muaLamList2 = new ArrayList<>();
-        muaLamList2.add(new MuaLam("Chuẩn bị cho mẹ", "Nội dung 2"));
-
-        adapter.addFragment(new MuaLamFragment(muaLamList), "Cần mua & cần làm", R.drawable.mushroom);
-        adapter.addFragment(new MuaLamFragment(muaLamList2), "Chuẩn bị sinh", R.drawable.muffin);
+        adapter.addFragment(new DocTruyenFragment(docTruyenList), "", R.drawable.mushroom);
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
@@ -87,11 +82,10 @@ public class MuaLamActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(MuaLamActivity.this, MenuMainActivity.class);
+        Intent intent = new Intent(DocTruyenActivity.this, MenuMainActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.trans_right_in,
                 R.anim.trans_right_out);
         finish();
     }
 }
-
