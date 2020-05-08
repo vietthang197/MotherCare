@@ -15,6 +15,7 @@ import java.util.List;
 
 import haui.lethanhha.com.mothercare.R;
 import haui.lethanhha.com.mothercare.adapter.TabAdapter;
+import haui.lethanhha.com.mothercare.db.MotherCareDatabase;
 import haui.lethanhha.com.mothercare.fragment.ThucPhamFragment;
 import haui.lethanhha.com.mothercare.fragment.TiemPhongFragment;
 import haui.lethanhha.com.mothercare.model.TiemPhong;
@@ -28,10 +29,16 @@ public class TiemPhongActivity extends AppCompatActivity {
 
     private ImageView imgBgTiemPhong;
 
+    private MotherCareDatabase motherCareDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tiem_phong);
+
+        motherCareDatabase = new MotherCareDatabase(this);
+        List<TiemPhong> tiemPhongMe = motherCareDatabase.getListTiemPhong("Mẹ");
+        List<TiemPhong> tiemPhongCon = motherCareDatabase.getListTiemPhong("Bé");
 
         imgBgTiemPhong = findViewById(R.id.imgBgTiemPhong);
         Picasso.with(this).load(R.drawable.image_anuong).into(imgBgTiemPhong); // chưa set lại ảnh bg
@@ -40,14 +47,8 @@ public class TiemPhongActivity extends AppCompatActivity {
         tabLayout =  findViewById(R.id.tabLayoutTiemPhong);
         adapter = new TabAdapter(getSupportFragmentManager(), this);
 
-        List<TiemPhong> tiemPhongList = new ArrayList<>();
-        tiemPhongList.add(new TiemPhong("Uấn ván", "Nội dung 1"));
-
-        List<TiemPhong> tiemPhongList2 = new ArrayList<>();
-        tiemPhongList2.add(new TiemPhong("Từ sơ sinh", "Nội dung 2"));
-
-        adapter.addFragment(new TiemPhongFragment(tiemPhongList), "Cho mẹ", R.drawable.mushroom);
-        adapter.addFragment(new TiemPhongFragment(tiemPhongList2), "Cho bé", R.drawable.muffin);
+        adapter.addFragment(new TiemPhongFragment(tiemPhongMe), "Cho mẹ", R.drawable.mushroom);
+        adapter.addFragment(new TiemPhongFragment(tiemPhongCon), "Cho bé", R.drawable.muffin);
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);

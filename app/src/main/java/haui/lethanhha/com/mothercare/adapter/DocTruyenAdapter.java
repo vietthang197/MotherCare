@@ -16,17 +16,17 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import haui.lethanhha.com.mothercare.R;
-import haui.lethanhha.com.mothercare.model.DocTruyen;
+import haui.lethanhha.com.mothercare.model.Truyen;
 
 public class DocTruyenAdapter extends RecyclerView.Adapter<DocTruyenAdapter.ViewHolder> {
 
-    private List<DocTruyen> docTruyenList;
+    private List<Truyen> docTruyenList;
 
     private Context context;
 
     private RecyclerViewOnClickListener listener;
 
-    public DocTruyenAdapter(List<DocTruyen> docTruyenList, Context context, RecyclerViewOnClickListener listener) {
+    public DocTruyenAdapter(List<Truyen> docTruyenList, Context context, RecyclerViewOnClickListener listener) {
         this.docTruyenList = docTruyenList;
         this.context = context;
         this.listener = listener;
@@ -68,10 +68,10 @@ public class DocTruyenAdapter extends RecyclerView.Adapter<DocTruyenAdapter.View
             recyclerViewOnClickListener = listener;
         }
 
-        void bindView(DocTruyen docTruyen) {
-            Picasso.with(context).load(docTruyen.getImgMon()).into(imgDocTruyenItem);
-            Picasso.with(context).load(docTruyen.getImgAllow()).into(imgAllow);
-            tvDocTruyenItem.setText(docTruyen.getTenMon());
+        void bindView(Truyen truyen) {
+//            Picasso.with(context).load(docTruyen.getImgMon()).into(imgDocTruyenItem);
+//            Picasso.with(context).load(docTruyen.getImgAllow()).into(imgAllow);
+            tvDocTruyenItem.setText(truyen.getTenTruyen());
 
         }
 

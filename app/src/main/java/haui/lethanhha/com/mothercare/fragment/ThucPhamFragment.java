@@ -1,5 +1,6 @@
 package haui.lethanhha.com.mothercare.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import haui.lethanhha.com.mothercare.R;
+import haui.lethanhha.com.mothercare.activity.AnUongDetailActivity;
 import haui.lethanhha.com.mothercare.activity.MenuMainActivity;
 import haui.lethanhha.com.mothercare.adapter.AnUongAdapter;
 import haui.lethanhha.com.mothercare.adapter.RecyclerViewOnClickListener;
@@ -37,7 +39,6 @@ public class ThucPhamFragment extends Fragment implements RecyclerViewOnClickLis
         View view = inflater.inflate(R.layout.fragment_an_uong, container, false);
         recyclerViewAnUong = view.findViewById(R.id.recyclerAnUong);
         anUongAdapter = new AnUongAdapter(anUongList, getContext(), this);
-
         recyclerViewAnUong.setAdapter(anUongAdapter);
         recyclerViewAnUong.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerViewAnUong.setHasFixedSize(true);
@@ -46,6 +47,8 @@ public class ThucPhamFragment extends Fragment implements RecyclerViewOnClickLis
 
     @Override
     public void onClick(int position) {
-
+        Intent intent = new Intent(getContext(), AnUongDetailActivity.class);
+        intent.putExtra("data", anUongList.get(position).getNoidung());
+        startActivity(intent);
     }
 }

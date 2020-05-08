@@ -36,12 +36,12 @@ public class ThaiKyActivity extends AppCompatActivity {
         adapter = new TabAdapter(getSupportFragmentManager(), this);
 
         List<ThaiKy> thaiKyList = new ArrayList<>();
-        thaiKyList.add(new ThaiKy(R.drawable.atiso, R.drawable.nen, "Tuần 1", "Thai Ky"));
-        thaiKyList.add(new ThaiKy(R.drawable.atiso, R.drawable.nen, "Tuần 2", "Thai Ky"));
-        thaiKyList.add(new ThaiKy(R.drawable.atiso, R.drawable.nen, "Tuần 3", "Thai Ky"));
-        thaiKyList.add(new ThaiKy(R.drawable.atiso, R.drawable.nen, "Tuần 4", "Thai Ky"));
-        thaiKyList.add(new ThaiKy(R.drawable.atiso, R.drawable.nen, "Tuần 5", "Thai Ky"));
-        thaiKyList.add(new ThaiKy(R.drawable.atiso, R.drawable.nen, "Tuần 6", "Thai Ky"));
+//        thaiKyList.add(new ThaiKy(R.drawable.atiso, R.drawable.nen, "Tuần 1", "Thai Ky"));
+//        thaiKyList.add(new ThaiKy(R.drawable.atiso, R.drawable.nen, "Tuần 2", "Thai Ky"));
+//        thaiKyList.add(new ThaiKy(R.drawable.atiso, R.drawable.nen, "Tuần 3", "Thai Ky"));
+//        thaiKyList.add(new ThaiKy(R.drawable.atiso, R.drawable.nen, "Tuần 4", "Thai Ky"));
+//        thaiKyList.add(new ThaiKy(R.drawable.atiso, R.drawable.nen, "Tuần 5", "Thai Ky"));
+//        thaiKyList.add(new ThaiKy(R.drawable.atiso, R.drawable.nen, "Tuần 6", "Thai Ky"));
 
 
         adapter.addFragment(new ThaiKyFragment(thaiKyList), "", R.drawable.mushroom);

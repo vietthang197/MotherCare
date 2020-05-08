@@ -15,8 +15,9 @@ import java.util.List;
 
 import haui.lethanhha.com.mothercare.R;
 import haui.lethanhha.com.mothercare.adapter.TabAdapter;
+import haui.lethanhha.com.mothercare.db.MotherCareDatabase;
 import haui.lethanhha.com.mothercare.fragment.DocTruyenFragment;
-import haui.lethanhha.com.mothercare.model.DocTruyen;
+import haui.lethanhha.com.mothercare.model.Truyen;
 
 public class DocTruyenActivity extends AppCompatActivity {
 
@@ -25,6 +26,8 @@ public class DocTruyenActivity extends AppCompatActivity {
     private ViewPager viewPager;
 
     private ImageView imgBgDocTruyen;
+
+    private MotherCareDatabase motherCareDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +41,8 @@ public class DocTruyenActivity extends AppCompatActivity {
         tabLayout =  findViewById(R.id.tabLayoutDocTruyen);
         adapter = new TabAdapter(getSupportFragmentManager(), this);
 
-        List<DocTruyen> docTruyenList = new ArrayList<>();
-        docTruyenList.add(new DocTruyen(R.drawable.atiso, R.drawable.nen, "Truyện 1", "Truyen co tich"));
-        docTruyenList.add(new DocTruyen(R.drawable.atiso, R.drawable.nen, "Truyện 2", "Truyen co tich"));
-        docTruyenList.add(new DocTruyen(R.drawable.atiso, R.drawable.nen, "Truyện 3", "Truyen co tich"));
-        docTruyenList.add(new DocTruyen(R.drawable.atiso, R.drawable.nen, "Truyện 4", "Truyen co tich"));
+        motherCareDatabase = new MotherCareDatabase(this);
+        List<Truyen> docTruyenList = motherCareDatabase.getListTruyen();
 
         adapter.addFragment(new DocTruyenFragment(docTruyenList), "", R.drawable.mushroom);
 

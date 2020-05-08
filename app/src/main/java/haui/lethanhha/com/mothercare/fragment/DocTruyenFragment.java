@@ -16,17 +16,17 @@ import java.util.List;
 import haui.lethanhha.com.mothercare.R;
 import haui.lethanhha.com.mothercare.adapter.DocTruyenAdapter;
 import haui.lethanhha.com.mothercare.adapter.RecyclerViewOnClickListener;
-import haui.lethanhha.com.mothercare.model.DocTruyen;
+import haui.lethanhha.com.mothercare.model.Truyen;
 
 public class DocTruyenFragment extends Fragment implements RecyclerViewOnClickListener {
 
-    private List<DocTruyen> docTruyenList;
+    private List<Truyen> docTruyenList;
 
     private RecyclerView recyclerViewDocTruyen;
 
     private DocTruyenAdapter docTruyenAdapter;
 
-    public DocTruyenFragment(List<DocTruyen> docTruyenList) {
+    public DocTruyenFragment(List<Truyen> docTruyenList) {
         this.docTruyenList= docTruyenList;
     }
 

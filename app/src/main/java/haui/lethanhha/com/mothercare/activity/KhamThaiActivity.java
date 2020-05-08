@@ -15,6 +15,7 @@ import java.util.List;
 
 import haui.lethanhha.com.mothercare.R;
 import haui.lethanhha.com.mothercare.adapter.TabAdapter;
+import haui.lethanhha.com.mothercare.db.MotherCareDatabase;
 import haui.lethanhha.com.mothercare.fragment.KhamThaiFragment;
 import haui.lethanhha.com.mothercare.model.KhamThai;
 
@@ -25,6 +26,8 @@ public class KhamThaiActivity extends AppCompatActivity {
     private ViewPager viewPager;
 
     private ImageView imgBgKhamThai;
+
+    private MotherCareDatabase motherCareDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +41,8 @@ public class KhamThaiActivity extends AppCompatActivity {
         tabLayout =  findViewById(R.id.tabLayoutKhamThai);
         adapter = new TabAdapter(getSupportFragmentManager(), this);
 
-        List<KhamThai> khamThaiList = new ArrayList<>();
-        khamThaiList.add(new KhamThai("Lần 1 : Tuần thứ 5", "Nội dung 1"));
+        motherCareDatabase = new MotherCareDatabase(this);
+        List<KhamThai> khamThaiList = motherCareDatabase.getListKhamThai();
 
         adapter.addFragment(new KhamThaiFragment(khamThaiList), "Lịch khám thai định kì", R.drawable.mushroom);
 

@@ -97,5 +97,4 @@ public class WelcomeActivity extends AppCompatActivity {
         tvTuanTuoi = findViewById(R.id.tvTuanTuoi);
         btnNext = findViewById(R.id.btnNext);
     }
-
 }

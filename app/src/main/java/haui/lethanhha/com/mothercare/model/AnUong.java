@@ -1,53 +1,86 @@
 package haui.lethanhha.com.mothercare.model;
 
 public class AnUong {
-    private int imgMon;
+    private int maAnUong;
 
-    private int imgAllow;
+    private String tenAnUong;
 
-    private String tenMon;
+    private String icon;
 
-    private String type;
+    private String hinhAnh;
 
-    public AnUong(int imgMon, int imgAllow, String tenMon, String type) {
-        this.imgMon = imgMon;
-        this.imgAllow = imgAllow;
-        this.tenMon = tenMon;
-        this.type = type;
+    private String noidung;
+
+    private String tenloai;
+
+    private String nenKhongNen;
+
+    public AnUong(int maAnUong, String tenAnUong, String icon, String hinhAnh, String noidung, String tenloai, String nenKhongNen) {
+        this.maAnUong = maAnUong;
+        this.tenAnUong = tenAnUong;
+        this.icon = icon;
+        this.hinhAnh = hinhAnh;
+        this.noidung = noidung;
+        this.tenloai = tenloai;
+        this.nenKhongNen = nenKhongNen;
     }
 
     public AnUong() {
     }
 
-    public int getImgMon() {
-        return imgMon;
+    public int getMaAnUong() {
+        return maAnUong;
     }
 
-    public void setImgMon(int imgMon) {
-        this.imgMon = imgMon;
+    public void setMaAnUong(int maAnUong) {
+        this.maAnUong = maAnUong;
     }
 
-    public int getImgAllow() {
-        return imgAllow;
+    public String getTenAnUong() {
+        return tenAnUong;
     }
 
-    public void setImgAllow(int imgAllow) {
-        this.imgAllow = imgAllow;
+    public void setTenAnUong(String tenAnUong) {
+        this.tenAnUong = tenAnUong;
     }
 
-    public String getTenMon() {
-        return tenMon;
+    public String getIcon() {
+        return icon;
     }
 
-    public void setTenMon(String tenMon) {
-        this.tenMon = tenMon;
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 
-    public String getType() {
-        return type;
+    public String getHinhAnh() {
+        return hinhAnh;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setHinhAnh(String hinhAnh) {
+        this.hinhAnh = hinhAnh;
+    }
+
+    public String getNoidung() {
+        return noidung;
+    }
+
+    public void setNoidung(String noidung) {
+        this.noidung = noidung;
+    }
+
+    public String getTenloai() {
+        return tenloai;
+    }
+
+    public void setTenloai(String tenloai) {
+        this.tenloai = tenloai;
+    }
+
+    public String getNenKhongNen() {
+        return nenKhongNen;
+    }
+
+    public void setNenKhongNen(String nenKhongNen) {
+        this.nenKhongNen = nenKhongNen;
     }
 }

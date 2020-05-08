@@ -1,6 +1,7 @@
 package haui.lethanhha.com.mothercare.adapter;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,7 +61,10 @@ public class DanhMucAdapter extends RecyclerView.Adapter<DanhMucAdapter.ViewHold
         }
 
         void bindView(DanhMuc danhMuc) {
-            Picasso.with(context).load(danhMuc.getAnhDanhMuc()).into(imgAnhDanhMuc);
+            Resources resources = context.getResources();
+            int resourceId = resources.getIdentifier(danhMuc.getTenHinhAnh(), "drawable",
+                    context.getPackageName());
+            Picasso.with(context).load(resourceId).into(imgAnhDanhMuc);
             tvTenDanhMuc.setText(danhMuc.getTenDanhMuc());
         }
 

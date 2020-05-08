@@ -1,32 +1,27 @@
 package haui.lethanhha.com.mothercare.adapter;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.squareup.picasso.Picasso;
-
 import java.util.List;
 
 import haui.lethanhha.com.mothercare.R;
-import haui.lethanhha.com.mothercare.model.MuaLam;
+import haui.lethanhha.com.mothercare.model.CanMuaCanLam;
 
 public class MuaLamAdapter extends RecyclerView.Adapter<MuaLamAdapter.ViewHolder> {
 
-    private List<MuaLam> muaLamList;
+    private List<CanMuaCanLam> canMuaCanLamList;
 
     private Context context;
 
-    public MuaLamAdapter(List<MuaLam> muaLamList, Context context) {
-        this.muaLamList = muaLamList;
+    public MuaLamAdapter(List<CanMuaCanLam> canMuaCanLamList, Context context) {
+        this.canMuaCanLamList = canMuaCanLamList;
         this.context = context;
     }
 
@@ -42,12 +37,12 @@ public class MuaLamAdapter extends RecyclerView.Adapter<MuaLamAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.bindView(muaLamList.get(position));
+        holder.bindView(canMuaCanLamList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return muaLamList.size();
+        return canMuaCanLamList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -59,9 +54,9 @@ public class MuaLamAdapter extends RecyclerView.Adapter<MuaLamAdapter.ViewHolder
             super(itemView);
         }
 
-        void bindView(MuaLam muaLam) {
-            tvTieuDe.setText(muaLam.getTenTieuDe());
-            tvNoiDung.setText(muaLam.getNoiDung());
+        void bindView(CanMuaCanLam canMuaCanLam) {
+            tvTieuDe.setText(canMuaCanLam.getNoiDung());
+            tvNoiDung.setText(canMuaCanLam.getNoiDung());
         }
 
         @Override

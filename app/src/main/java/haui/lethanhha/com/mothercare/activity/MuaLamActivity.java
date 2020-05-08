@@ -15,11 +15,9 @@ import java.util.List;
 
 import haui.lethanhha.com.mothercare.R;
 import haui.lethanhha.com.mothercare.adapter.TabAdapter;
+import haui.lethanhha.com.mothercare.db.MotherCareDatabase;
 import haui.lethanhha.com.mothercare.fragment.MuaLamFragment;
-import haui.lethanhha.com.mothercare.fragment.ThucPhamFragment;
-import haui.lethanhha.com.mothercare.fragment.TiemPhongFragment;
-import haui.lethanhha.com.mothercare.model.MuaLam;
-import haui.lethanhha.com.mothercare.model.TiemPhong;
+import haui.lethanhha.com.mothercare.model.CanMuaCanLam;
 
 
 public class MuaLamActivity extends AppCompatActivity {
@@ -29,6 +27,8 @@ public class MuaLamActivity extends AppCompatActivity {
     private ViewPager viewPager;
 
     private ImageView imgBgMuaLam;
+
+    private MotherCareDatabase motherCareDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,14 +42,14 @@ public class MuaLamActivity extends AppCompatActivity {
         tabLayout =  findViewById(R.id.tabLayoutMuaLam);
         adapter = new TabAdapter(getSupportFragmentManager(), this);
 
-        List<MuaLam> muaLamList = new ArrayList<>();
-        muaLamList.add(new MuaLam("Chuẩn bị những gì trước khi sinh ?", "Nội dung 1"));
+        motherCareDatabase = new MotherCareDatabase(this);
+        List<CanMuaCanLam> canMuaCanLamList = motherCareDatabase.getListCanMuaCanLam();
 
-        List<MuaLam> muaLamList2 = new ArrayList<>();
-        muaLamList2.add(new MuaLam("Chuẩn bị cho mẹ", "Nội dung 2"));
+        List<CanMuaCanLam> canMuaCanLamList2 = new ArrayList<>();
 
-        adapter.addFragment(new MuaLamFragment(muaLamList), "Cần mua & cần làm", R.drawable.mushroom);
-        adapter.addFragment(new MuaLamFragment(muaLamList2), "Chuẩn bị sinh", R.drawable.muffin);
+
+        adapter.addFragment(new MuaLamFragment(canMuaCanLamList), "Cần mua & cần làm", R.drawable.mushroom);
+        adapter.addFragment(new MuaLamFragment(canMuaCanLamList2), "Chuẩn bị sinh", R.drawable.muffin);
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);

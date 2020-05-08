@@ -14,17 +14,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 import haui.lethanhha.com.mothercare.R;
+import haui.lethanhha.com.mothercare.adapter.RecyclerViewOnClickListener;
 import haui.lethanhha.com.mothercare.adapter.TabAdapter;
+import haui.lethanhha.com.mothercare.db.MotherCareDatabase;
 import haui.lethanhha.com.mothercare.fragment.ThucPhamFragment;
 import haui.lethanhha.com.mothercare.model.AnUong;
 
-public class AnUongActivity extends AppCompatActivity {
+public class AnUongActivity extends AppCompatActivity implements RecyclerViewOnClickListener {
 
     private TabAdapter adapter;
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
     private ImageView imgBgAnUong;
+
+    private MotherCareDatabase motherCareDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,21 +42,18 @@ public class AnUongActivity extends AppCompatActivity {
         tabLayout =  findViewById(R.id.tabLayoutAnUong);
         adapter = new TabAdapter(getSupportFragmentManager(), this);
 
+        motherCareDatabase = new MotherCareDatabase(this);
+
+        List<AnUong> listThucPham = motherCareDatabase.getListAnUong("Thực Phẩm");
+        List<AnUong> listMonAn = motherCareDatabase.getListAnUong("Món Ăn");
+        List<AnUong> listNhomChat = motherCareDatabase.getListAnUong("Nhóm Chất");
+
         List<AnUong> anUongList = new ArrayList<>();
-        anUongList.add(new AnUong(R.drawable.atiso, R.drawable.nen, "Atiso", "Thuc Pham"));
-        anUongList.add(new AnUong(R.drawable.bia, R.drawable.khongnen, "Bia", "Thuc Pham"));
-        anUongList.add(new AnUong(R.drawable.banhmi, R.drawable.nen, "Bánh mì", "Thuc Pham"));
-        anUongList.add(new AnUong(R.drawable.quachuoi, R.drawable.nen, "Chuối", "Thuc Pham"));
 
-        List<AnUong> anUongList2 = new ArrayList<>();
-        anUongList2.add(new AnUong(R.drawable.bauduclonapchao, R.drawable.nen, "Bầu dục lợn áp chảo", "Mon An"));
-        anUongList2.add(new AnUong(R.drawable.canhcuamungtoi, R.drawable.nen, "Canh cua mùng tơi", "Mon An"));
-        anUongList2.add(new AnUong(R.drawable.canhgahatsen, R.drawable.nen, "Canh gà hạt sen", "Mon An"));
-        anUongList2.add(new AnUong(R.drawable.canhtomrauden, R.drawable.nen, "Canh tôm rau rền", "Mon An"));
 
-        adapter.addFragment(new ThucPhamFragment(anUongList), "Thực phẩm", R.drawable.mushroom);
-        adapter.addFragment(new ThucPhamFragment(anUongList2), "Món ăn", R.drawable.muffin);
-        adapter.addFragment(new ThucPhamFragment(anUongList), "Nhóm chất", R.drawable.chart);
+        adapter.addFragment(new ThucPhamFragment(listThucPham), "Thực Phẩm", R.drawable.mushroom);
+        adapter.addFragment(new ThucPhamFragment(listMonAn), "Món ăn", R.drawable.muffin);
+        adapter.addFragment(new ThucPhamFragment(listNhomChat), "Nhóm chất", R.drawable.chart);
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
@@ -95,5 +96,10 @@ public class AnUongActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.trans_right_in,
                 R.anim.trans_right_out);
         finish();
+    }
+
+    @Override
+    public void onClick(int position) {
+
     }
 }

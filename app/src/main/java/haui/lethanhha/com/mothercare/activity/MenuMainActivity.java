@@ -12,6 +12,7 @@ import java.util.Objects;
 import haui.lethanhha.com.mothercare.R;
 import haui.lethanhha.com.mothercare.adapter.DanhMucAdapter;
 import haui.lethanhha.com.mothercare.adapter.RecyclerViewOnClickListener;
+import haui.lethanhha.com.mothercare.db.MotherCareDatabase;
 import haui.lethanhha.com.mothercare.model.DanhMuc;
 
 public class MenuMainActivity extends AppCompatActivity  implements RecyclerViewOnClickListener {
@@ -21,6 +22,8 @@ public class MenuMainActivity extends AppCompatActivity  implements RecyclerView
     private List<DanhMuc> danhMucList;
 
     private DanhMucAdapter danhMucAdapter;
+
+    private MotherCareDatabase motherCareDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,18 +40,8 @@ public class MenuMainActivity extends AppCompatActivity  implements RecyclerView
     }
 
     private void initData() {
-        danhMucList = new ArrayList<>();
-        danhMucList.add(new DanhMuc(1, R.drawable.shopnormal, "Shop"));
-        danhMucList.add(new DanhMuc(2, R.drawable.anuongdefault, "Ăn uống"));
-        danhMucList.add(new DanhMuc(3, R.drawable.tiemphongdefault, "Tiêm phòng"));
-        danhMucList.add(new DanhMuc(4, R.drawable.lichkhamthaidefault, "Lịch khám thai"));
-        danhMucList.add(new DanhMuc(5, R.drawable.canmuacanlamdefault, "Cần mua & cần làm"));
-        danhMucList.add(new DanhMuc(6, R.drawable.dattenchobedefault, "Đặt tên cho bé"));
-        danhMucList.add(new DanhMuc(7, R.drawable.doctruyendefault, "Đọc truyện"));
-        danhMucList.add(new DanhMuc(8, R.drawable.amnhacdefault, "Âm nhạc"));
-        danhMucList.add(new DanhMuc(9, R.drawable.laplichdefault, "Lập lịch"));
-        danhMucList.add(new DanhMuc(10, R.drawable.hoidapdefault, "Hỏi đáp"));
-        danhMucList.add(new DanhMuc(11, R.drawable.thaikydefault, "Thai kỳ"));
+        motherCareDatabase = new MotherCareDatabase(this);
+        danhMucList = motherCareDatabase.getListDanhMuc();
         danhMucAdapter = new DanhMucAdapter(MenuMainActivity.this, danhMucList, this);
 
     }

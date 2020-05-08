@@ -64,7 +64,7 @@ public class TiemPhongAdapter extends RecyclerView.Adapter<TiemPhongAdapter.View
         }
 
         void bindView(TiemPhong tiemPhong) {
-            tvTieuDe.setText(tiemPhong.getTenTieuDe());
+            tvTieuDe.setText(tiemPhong.getTenTiemPhong());
             tvNoiDung.setText(tiemPhong.getNoiDung());
         }
 

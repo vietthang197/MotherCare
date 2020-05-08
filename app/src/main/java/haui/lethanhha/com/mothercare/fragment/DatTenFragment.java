@@ -16,18 +16,18 @@ import java.util.List;
 import haui.lethanhha.com.mothercare.R;
 import haui.lethanhha.com.mothercare.adapter.DatTenAdapter;
 import haui.lethanhha.com.mothercare.adapter.RecyclerViewOnClickListener;
-import haui.lethanhha.com.mothercare.model.DatTen;
+import haui.lethanhha.com.mothercare.model.TenBe;
 
 
 public class DatTenFragment extends Fragment implements RecyclerViewOnClickListener {
 
-    private List<DatTen> datTenList;
+    private List<TenBe> datTenList;
 
     private RecyclerView recyclerViewDatTen;
 
     private DatTenAdapter datTenAdapter;
 
-    public DatTenFragment(List<DatTen> datTenList) {
+    public DatTenFragment(List<TenBe> datTenList) {
         this.datTenList = datTenList;
     }
 

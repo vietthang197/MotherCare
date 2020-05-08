@@ -69,9 +69,9 @@ public class ThaiKyAdapter extends RecyclerView.Adapter<ThaiKyAdapter.ViewHolder
         }
 
         void bindView(ThaiKy thaiKy) {
-            Picasso.with(context).load(thaiKy.getImgMon()).into(imgThaiKyItem);
-            Picasso.with(context).load(thaiKy.getImgAllow()).into(imgAllow);
-            tvThaiKyItem.setText(thaiKy.getTenMon());
+//            Picasso.with(context).load(thaiKy.getImgMon()).into(imgThaiKyItem);
+//            Picasso.with(context).load(thaiKy.getImgAllow()).into(imgAllow);
+//            tvThaiKyItem.setText(thaiKy.getTenMon());
 
         }
 

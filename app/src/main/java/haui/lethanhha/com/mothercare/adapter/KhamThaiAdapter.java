@@ -55,7 +55,7 @@ public class KhamThaiAdapter extends RecyclerView.Adapter<KhamThaiAdapter.ViewHo
         }
 
         void bindView(KhamThai khamThai) {
-            tvTieuDe.setText(khamThai.getTenTieuDe());
+            tvTieuDe.setText(khamThai.getLanKham());
             tvNoiDung.setText(khamThai.getNoiDung());
         }
 

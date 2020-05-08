@@ -15,10 +15,11 @@ import java.util.List;
 
 import haui.lethanhha.com.mothercare.R;
 import haui.lethanhha.com.mothercare.adapter.TabAdapter;
+import haui.lethanhha.com.mothercare.db.MotherCareDatabase;
 import haui.lethanhha.com.mothercare.fragment.DatTenFragment;
 import haui.lethanhha.com.mothercare.fragment.ThucPhamFragment;
 import haui.lethanhha.com.mothercare.fragment.TiemPhongFragment;
-import haui.lethanhha.com.mothercare.model.DatTen;
+import haui.lethanhha.com.mothercare.model.TenBe;
 import haui.lethanhha.com.mothercare.model.TiemPhong;
 
 
@@ -29,6 +30,8 @@ public class DatTenActivity extends AppCompatActivity {
     private ViewPager viewPager;
 
     private ImageView imgBgDatTen;
+
+    private MotherCareDatabase motherCareDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,14 +45,12 @@ public class DatTenActivity extends AppCompatActivity {
         tabLayout =  findViewById(R.id.tabLayoutDatTen);
         adapter = new TabAdapter(getSupportFragmentManager(), this);
 
-        List<DatTen> datTenList = new ArrayList<>();
-        datTenList.add(new DatTen("An", "Nội dung 1"));
+        motherCareDatabase = new MotherCareDatabase(this);
+        List<TenBe> tenNam = motherCareDatabase.getListTenbe("Nam");
+        List<TenBe> tenNu = motherCareDatabase.getListTenbe("Nữ");
 
-        List<DatTen> datTenList2 = new ArrayList<>();
-        datTenList2.add(new DatTen("Hà", "Nội dung 2"));
-
-        adapter.addFragment(new DatTenFragment(datTenList), "Tên bé trai", R.drawable.mushroom);
-        adapter.addFragment(new DatTenFragment(datTenList2), "Tên bé gái", R.drawable.muffin);
+        adapter.addFragment(new DatTenFragment(tenNam), "Tên bé trai", R.drawable.mushroom);
+        adapter.addFragment(new DatTenFragment(tenNu), "Tên bé gái", R.drawable.muffin);
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);

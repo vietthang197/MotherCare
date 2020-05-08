@@ -13,17 +13,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import haui.lethanhha.com.mothercare.R;
-
-import haui.lethanhha.com.mothercare.model.DatTen;
+import haui.lethanhha.com.mothercare.model.TenBe;
 
 public class DatTenAdapter extends RecyclerView.Adapter<DatTenAdapter.ViewHolder> {
 
-    private List<DatTen> datTenList;
+    private List<TenBe> datTenList;
 
     private Context context;
 
 
-    public DatTenAdapter(List<DatTen> datTenList, Context context) {
+    public DatTenAdapter(List<TenBe> datTenList, Context context) {
         this.datTenList = datTenList;
         this.context = context;
     }
@@ -57,9 +56,9 @@ public class DatTenAdapter extends RecyclerView.Adapter<DatTenAdapter.ViewHolder
             super(itemView);
         }
 
-        void bindView(DatTen datTen) {
-            tvTieuDe.setText(datTen.getTenTieuDe());
-            tvNoiDung.setText(datTen.getNoiDung());
+        void bindView(TenBe tenBe) {
+           tvTieuDe.setText(tenBe.getTenBe() + " : " + tenBe.getyNghia());
+            tvNoiDung.setText("Tên khác: " + tenBe.getTenKhac());
         }
 
         @Override

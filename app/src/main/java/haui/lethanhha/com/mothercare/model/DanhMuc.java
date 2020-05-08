@@ -2,27 +2,27 @@ package haui.lethanhha.com.mothercare.model;
 
 public class DanhMuc {
 
-    private int anhDanhMuc;
+    private int maDanhMuc;
 
     private String tenDanhMuc;
 
-    private int id;
+    private String tenHinhAnh;
 
     public DanhMuc() {
     }
 
-    public DanhMuc(int id, int anhDanhMuc, String tenDanhMuc) {
-        this.id = id;
-        this.anhDanhMuc = anhDanhMuc;
+    public DanhMuc(int maDanhMuc, String tenDanhMuc, String tenHinhAnh) {
+        this.maDanhMuc = maDanhMuc;
         this.tenDanhMuc = tenDanhMuc;
+        this.tenHinhAnh = tenHinhAnh;
     }
 
-    public int getAnhDanhMuc() {
-        return anhDanhMuc;
+    public int getMaDanhMuc() {
+        return maDanhMuc;
     }
 
-    public void setAnhDanhMuc(int anhDanhMuc) {
-        this.anhDanhMuc = anhDanhMuc;
+    public void setMaDanhMuc(int maDanhMuc) {
+        this.maDanhMuc = maDanhMuc;
     }
 
     public String getTenDanhMuc() {
@@ -33,11 +33,11 @@ public class DanhMuc {
         this.tenDanhMuc = tenDanhMuc;
     }
 
-    public int getId() {
-        return id;
+    public String getTenHinhAnh() {
+        return tenHinhAnh;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setTenHinhAnh(String tenHinhAnh) {
+        this.tenHinhAnh = tenHinhAnh;
     }
 }
