@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="haui.lethanhha.com.mothercare.activity.ThongTinActivity"
+    android:id="@+id/drawerLayout">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:background="@color/colorAccent"
+            android:layout_height="?attr/actionBarSize">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/vf_banditb"
+                android:textSize="26sp"
+                android:textAlignment="center"
+                android:text="Thông tin của mẹ"
+                android:gravity="center_vertical"></TextView>
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="26sp"
+            android:text="Tên của mẹ : "
+            android:gravity="center_vertical">
+        </TextView>
+
+        <EditText
+            android:id="@+id/edtTenMe"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:hint="Nhập tên của mẹ"
+            android:fontFamily="@font/myriadpro_semibold"
+            android:textSize="18sp"
+            android:background="#FFFFFF"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="26sp"
+            android:text="Chiều cao của mẹ : "
+            android:gravity="center_vertical">
+        </TextView>
+
+        <EditText
+            android:id="@+id/edtChieucao"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:hint="Nhập chiều cao của mẹ (cm)"
+            android:fontFamily="@font/myriadpro_semibold"
+            android:textSize="18sp"
+            android:background="#FFFFFF"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="26sp"
+            android:text="Cân nặng của mẹ : "
+            android:gravity="center_vertical">
+        </TextView>
+
+        <EditText
+            android:id="@+id/edtCanNang"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:hint="Cân nặng của mẹ"
+            android:fontFamily="@font/myriadpro_semibold"
+            android:textSize="18sp"
+            android:background="#FFFFFF"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="26sp"
+            android:text="Chu vi vòng bụng : "
+            android:gravity="center_vertical">
+        </TextView>
+
+        <EditText
+            android:id="@+id/edtChuViVongBung"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:hint="Đo ở chỗ phình nhất, thường là qua rốn (cm)"
+            android:fontFamily="@font/myriadpro_semibold"
+            android:textSize="18sp"
+            android:background="#FFFFFF"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="26sp"
+            android:text="Chiều cao tử cung : "
+            android:gravity="center_vertical">
+        </TextView>
+
+        <EditText
+            android:id="@+id/edtChieuCaoTuCung"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:hint="Khoản cách từ mu đến đáy tử cung(cm) "
+            android:fontFamily="@font/myriadpro_semibold"
+            android:textSize="18sp"
+            android:background="#FFFFFF"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="26sp"
+            android:text="Cân nặng hiện tại của bé : "
+            android:gravity="center_vertical">
+        </TextView>
+
+        <EditText
+            android:id="@+id/edtCanNangBe"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:hint=" "
+            android:fontFamily="@font/myriadpro_semibold"
+            android:textSize="18sp"
+            android:background="#FFFFFF"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <Button
+                android:id="@+id/btnLuu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cập nhật"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/background_danhmuc">
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>
