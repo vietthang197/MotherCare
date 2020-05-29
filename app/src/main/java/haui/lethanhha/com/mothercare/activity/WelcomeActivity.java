@@ -23,6 +23,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
+import java.util.Set;
 
 import haui.lethanhha.com.mothercare.R;
 import haui.lethanhha.com.mothercare.service.AlarmNotify;
@@ -140,18 +144,19 @@ public class WelcomeActivity extends AppCompatActivity {
     }
 
     private void datLichThongBao(String ngayMangThai) throws ParseException {
-        //Calendar calendar = Calendar.getInstance();
-        //Date date = sdf.parse(ngayMangThai);
-       // calendar.setTime(date);
-
         Intent _myIntent = new Intent(getBaseContext(), AlarmNotify.class);
-        Calendar myAlarmDate = Calendar.getInstance();
-        myAlarmDate.setTimeInMillis(System.currentTimeMillis());
-        myAlarmDate.add(Calendar.MINUTE, 1);
         AlarmManager alarmManager = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
         _myIntent.setAction("THONGBAO");
-        _myIntent.putExtra("NOIDUNG","Đến lịch khám thai");
-        PendingIntent _myPendingIntent = PendingIntent.getBroadcast(getBaseContext(), 1, _myIntent, 0);
-        alarmManager.set(AlarmManager.RTC_WAKEUP, myAlarmDate.getTimeInMillis(),_myPendingIntent);
+
+        int[] listWeekGoHospital = new int[]{5, 8, 12, 16, 20, 22, 26, 30, 32, 34, 36, 38, 39, 40};
+        for (int i = 0; i < listWeekGoHospital.length; i++) {
+            Calendar calendar = Calendar.getInstance();
+            Date date = sdf.parse(ngayMangThai);
+            calendar.setTime(date);
+            calendar.add(Calendar.WEEK_OF_YEAR, listWeekGoHospital[i]);
+            _myIntent.putExtra("NOIDUNG","Đến lịch khám thai tuần mang thai thứ " + listWeekGoHospital[i]);
+            PendingIntent _myPendingIntent = PendingIntent.getBroadcast(getBaseContext(), listWeekGoHospital[i], _myIntent, 0);
+            alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),_myPendingIntent);
+        }
     }
 }

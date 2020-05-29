@@ -1,5 +1,6 @@
 package haui.lethanhha.com.mothercare.db;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -15,6 +16,7 @@ import haui.lethanhha.com.mothercare.model.AnUong;
 import haui.lethanhha.com.mothercare.model.CanMuaCanLam;
 import haui.lethanhha.com.mothercare.model.DanhMuc;
 import haui.lethanhha.com.mothercare.model.KhamThai;
+import haui.lethanhha.com.mothercare.model.LapLich;
 import haui.lethanhha.com.mothercare.model.TenBe;
 import haui.lethanhha.com.mothercare.model.TiemPhong;
 import haui.lethanhha.com.mothercare.model.Truyen;
@@ -271,6 +273,68 @@ public class MotherCareDatabase {
 
             KhamThai tc = new KhamThai(id, lanKham, noidung);
             arr.add(tc);
+            cursor.moveToNext();
+        }
+        closeDatabase();
+        return arr;
+    }
+
+    public int themLapLich(LapLich lapLich) {
+        try {
+            openDatabase();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put("NgayNhacNho", lapLich.getNgayNhacNho());
+            contentValues.put("GioNhacNho", lapLich.getGioNhacNho());
+            contentValues.put("GhiChu", lapLich.getGhiChu());
+            contentValues.put("TenLoai", lapLich.getTenLoai());
+            contentValues.put("TrangThai", lapLich.getTrangThai());
+            int idInserted = (int)database.insert("LapLich", null, contentValues);
+//            database.execSQL("INSERT INTO LapLich(NgayNhacNho, GioNhacNho, GhiChu, TenLoai, TrangThai) VALUES(?,?,?,?,?)", new String[]{lapLich.getNgayNhacNho(),
+//            lapLich.getGioNhacNho(), lapLich.getGhiChu(), lapLich.getTenLoai(), lapLich.getTrangThai() + ""});
+            return idInserted;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        } finally {
+            closeDatabase();
+        }
+    }
+
+    public boolean deleteLapLich(int maLapLich) {
+       try {
+           openDatabase();
+           database.execSQL("DELETE FROM LapLich Where MaLapLich = ?", new String[]{maLapLich + ""});
+           return true;
+       } catch (Exception e) {
+           e.printStackTrace();
+           return false;
+       } finally {
+           closeDatabase();
+       }
+    }
+
+    public List<LapLich> getListLapLich() {
+        List<LapLich> arr = new ArrayList<>();
+        openDatabase();
+        Cursor cursor = database.rawQuery("SELECT * FROM LapLich", new String[]{});
+        int idxId =  cursor.getColumnIndex("MaLapLich");
+        int idNgayNhacNho =  cursor.getColumnIndex("NgayNhacNho");
+        int idGioNhacNho =  cursor.getColumnIndex("GioNhacNho");
+        int idGhiChu = cursor.getColumnIndex("GhiChu");
+        int idTenLoai = cursor.getColumnIndex("TenLoai");
+        int idTrangThai = cursor.getColumnIndex("TrangThai");
+
+        cursor.moveToFirst();
+        while (cursor.isAfterLast() == false){
+            int id = cursor.getInt(idxId);
+            String ngayNhacNho = cursor.getString(idNgayNhacNho);
+            String gioNhacNho = cursor.getString(idGioNhacNho);
+            String ghiChu = cursor.getString(idGhiChu);
+            String tenLoai = cursor.getString(idTenLoai);
+            int trangThai = cursor.getInt(idTrangThai);
+
+           LapLich lapLich = new LapLich(id, ngayNhacNho, gioNhacNho, ghiChu, tenLoai, trangThai);
+           arr.add(lapLich);
             cursor.moveToNext();
         }
         closeDatabase();
