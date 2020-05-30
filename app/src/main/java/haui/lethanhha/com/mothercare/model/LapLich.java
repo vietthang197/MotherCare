@@ -5,6 +5,8 @@ public class LapLich {
 
     private String ngayNhacNho;
 
+    private String gioNhacNho;
+
     private String ghiChu;
 
     private String tenLoai;
@@ -14,9 +16,10 @@ public class LapLich {
     public LapLich() {
     }
 
-    public LapLich(int maLapLich, String ngayNhacNho, String ghiChu, String tenLoai, int trangThai) {
+    public LapLich(int maLapLich, String ngayNhacNho, String gioNhacNho, String ghiChu, String tenLoai, int trangThai) {
         this.maLapLich = maLapLich;
         this.ngayNhacNho = ngayNhacNho;
+        this.gioNhacNho = gioNhacNho;
         this.ghiChu = ghiChu;
         this.tenLoai = tenLoai;
         this.trangThai = trangThai;
@@ -36,6 +39,14 @@ public class LapLich {
 
     public void setNgayNhacNho(String ngayNhacNho) {
         this.ngayNhacNho = ngayNhacNho;
+    }
+
+    public String getGioNhacNho() {
+        return gioNhacNho;
+    }
+
+    public void setGioNhacNho(String gioNhacNho) {
+        this.gioNhacNho = gioNhacNho;
     }
 
     public String getGhiChu() {
